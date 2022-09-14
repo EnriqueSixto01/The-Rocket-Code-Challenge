@@ -55,13 +55,14 @@ const handleBlur =(e) =>{
                <div>
                <input
                     type='text'
-                    name={'paternalSurname'}
+                    name={'paternalSurname'} 
                     value={inputName.paternalSurname}
                     placeholder= 'Apellido Paterno'
                     onChange={handleOnChange}
                     onBlur={handleBlur}
                     />
                </div>
+               {errors.paternalSurname && <p>{errors.paternalSurname}</p>}
                <div>
                <input
                     type='text'
@@ -72,6 +73,7 @@ const handleBlur =(e) =>{
                     onBlur={handleBlur}
                     />
                </div>
+               {errors.maternalSurname && <p>{errors.maternalSurname}</p>}
              <div>
                 {Object.keys(errors).length ? <span></span> : <span>{inputName.name} </span>}
                 {Object.keys(errors).length ? <span></span> : <span>{inputName.surname} </span>}
