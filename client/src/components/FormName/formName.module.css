@@ -1,0 +1,18 @@
+.container {
+    width: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+    height: 670px;
+    margin-top: 0rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.textFrom{
+    position: relative;
+    margin-top: 0rem;
+    margin-left: 1rem;
+    font-size: 15px;
+    text-align: initial
+}

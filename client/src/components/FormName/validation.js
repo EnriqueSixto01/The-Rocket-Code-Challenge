@@ -6,7 +6,7 @@ export default function validateName(value){
         else if(!regName.test(value.name.trim())) error.name = "*Solo letras"
 
         if(value.surname){
-        if(value.surname.length > 15) error.surname = "No mas de 15 caracteres"
+        if(value.surname.length > 15) error.surname = "*No mas de 15 caracteres"
         else if(!regName.test(value.surname.trim())) error.surname = "*Solo letras"
         }
         if(!value.paternalSurname.trim()) error.paternalSurname = "*Completa este campo";
