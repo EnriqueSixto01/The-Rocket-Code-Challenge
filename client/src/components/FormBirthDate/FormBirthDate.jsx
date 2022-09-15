@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-// import Chat from './Chat';
+import FormContact from '../FormContact/FormContact.jsx';
 import validateDate from './validation.js';
 
-function FormBirthDate() {
+function FormBirthDate({name, setName}) {
 const [errors, setErrors] = useState({})
 const [date, setDate] = useState({
     day: "",
@@ -10,7 +10,7 @@ const [date, setDate] = useState({
     year: ""
 })
 
-console.log(errors)
+// console.log(errors)
 
 const handleOnChange = (e) =>{
     const {name, value} = e.target
@@ -25,6 +25,7 @@ const handleBlur =(e) =>{
 
     return (
         <div>
+            
             <div>
                 <h5>¿Cuál es tu fecha de nacimiento?</h5>
             </div>
@@ -66,6 +67,11 @@ const handleBlur =(e) =>{
                {Object.keys(errors).length ? <span></span> : <span>{date.month} </span>}
                {Object.keys(errors).length ? <span></span> : <span>{date.year} </span>}
                </div>
+             <FormContact
+                name={name}
+                setName={setName}
+                date={date}
+                setDate={setDate}/>
 
         </div>
     );

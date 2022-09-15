@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-
+import Chat from '../Chat/Chat';
 import validateContact from './validation';
 
-function FormContact(props) {
+function FormContact({name, setName, date, setDate}) {
 const [errors, setErrors] = useState({})
 const [contact, setContact] = useState({
     email: "",
     phoneNumber: ""
 })
 
-console.log(errors)
+// console.log(errors)
 const handleOnChange = (e) =>{
     const {name, value} = e.target
     setContact({...contact, [name]:value });
@@ -51,6 +51,13 @@ const handleBlur = (e) =>{
                {Object.keys(errors).length || contact.phoneNumber === "" ? <span></span> : <span>{contact.email} </span>}
                {Object.keys(errors).length  ? <span></span> : <span>{contact.phoneNumber} </span>}
                </div>
+              <Chat
+                name={name}
+                setName={setName}
+                date={date}
+                setDate={setDate}
+                contact={contact}
+                setContact={setContact}/>
         </div>
     );
 }

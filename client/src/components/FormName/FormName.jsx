@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-// import Chat from './Chat';
 import validateName from './validation.js';
-
+import FormBirthDate from '../FormBirthDate/FormBirthDate.jsx';
 function FormName() {
 const [errors, setErrors] = useState({});
 const [inputName, setInputName] = useState({
@@ -11,7 +10,7 @@ const [inputName, setInputName] = useState({
     maternalSurname:""
 })
 // console.log(errors)
-
+ 
 
 
 const handleOnChange = (e) =>{
@@ -25,7 +24,9 @@ const handleBlur =(e) =>{
 }
 
     return (
-        <div>   
+        <div>  
+            <div>
+            </div> 
             <div>
                 <h5>¿Cuál es tu nombre?</h5>
             </div>
@@ -80,6 +81,9 @@ const handleBlur =(e) =>{
                 {Object.keys(errors).length ? <span></span> : <span>{inputName.paternalSurname} </span>}
                 {Object.keys(errors).length ? <span></span> : <span>{inputName.maternalSurname} </span>}
              </div>
+            <FormBirthDate
+                name={inputName}
+                setName={setInputName}/>
         </div>
     );
 }
